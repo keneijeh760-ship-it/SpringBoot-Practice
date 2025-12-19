@@ -1,4 +1,4 @@
-package com.phope.hope.Entity;
+package com.phope.hope.DTO;
 
 public class TransferRequest {
 

@@ -1,8 +1,15 @@
 package com.phope.hope.Controller;
 
-import com.phope.hope.Entity.TransferRequest;
+import com.phope.hope.DTO.AccountResponseDTO;
+import com.phope.hope.DTO.TransferRequest;
+import com.phope.hope.DTO.UserRequestDTO;
+import com.phope.hope.DTO.UserResponseDTO;
+import com.phope.hope.Entity.Account;
+import com.phope.hope.Entity.User;
 import com.phope.hope.Service.BankingService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/transfers")
@@ -18,16 +25,22 @@ public class BankingController {
         this.bankingService = bankingService;
 
     }
+    @PostMapping
+    public UserResponseDTO createUser(@RequestBody UserRequestDTO requestDTO) {
+        return bankingService.createUser(requestDTO);
+    }
+
 
 
 
     @PostMapping
-    public void MoneyTransfer (@RequestBody TransferRequest request){
+    public String transferMoney(@RequestBody TransferRequest request) {
         bankingService.TransferMoney(
                 request.getFromAccountId(),
                 request.getToAccountId(),
                 request.getAmount()
         );
+        return "Transfer successful";
     }
 
 

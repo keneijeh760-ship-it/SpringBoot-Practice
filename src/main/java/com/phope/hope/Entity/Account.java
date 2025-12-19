@@ -26,7 +26,7 @@ public class Account {
         return balance;
     }
 
-    public   String getAccountNumber(){
+    public long getAccountNumber(){
         return accountNumber;
     }
 
