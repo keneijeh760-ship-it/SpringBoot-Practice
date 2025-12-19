@@ -31,3 +31,28 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Compiled class files
+*.class
+
+# Build directories
+/target/
+/bin/
+/out/
+
+# IntelliJ files
+/.idea/
+/*.iml
+
+# Maven / Gradle
+/.mvn/
+/.gradle/
+/.settings/
+
+# Logs
+*.log
+
+# JAR / WAR files
+*.jar
+*.war
+
