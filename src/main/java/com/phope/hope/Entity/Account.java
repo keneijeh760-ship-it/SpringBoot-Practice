@@ -8,7 +8,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String accountNumber;
+    private long accountNumber;
     private double balance;
 
     @ManyToOne
@@ -16,7 +16,7 @@ public class Account {
     private User user;
 
     public Account () {}
-    public Account (String accountNumber, double balance, User user){
+    public Account (long accountNumber, double balance, User user){
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.user = user;
@@ -44,7 +44,7 @@ public class Account {
 
 
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(long accountNumber) {
         this.accountNumber = accountNumber;
     }
 

@@ -7,6 +7,8 @@ import com.phope.hope.Entity.Account;
 import com.phope.hope.Entity.User;
 import com.phope.hope.Repository.AccountRepository;
 import com.phope.hope.Repository.UserRepository;
+import com.phope.hope.exception.AccountNotFoundException;
+import com.phope.hope.exception.InsufficinetFundsException;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
@@ -64,11 +66,11 @@ public class BankingService {
 
 
     public void TransferMoney(long fromId, long toId, double amount){
-        Account from  = accountRepository.findById(fromId).orElseThrow(() -> new RuntimeException("Account not found"));
-        Account to = accountRepository.findById(toId).orElseThrow(() -> new RuntimeException("Account not found"));
+        Account from  = accountRepository.findById(fromId).orElseThrow(() -> new AccountNotFoundException(fromId));
+        Account to = accountRepository.findById(toId).orElseThrow(() -> new AccountNotFoundException(toId));
 
         if (from.getBalance() < amount){
-            throw new RuntimeException("Insufficent Funds");
+            throw new InsufficinetFundsException();
         }
 
         from.setBalance(from.getBalance() - amount);
