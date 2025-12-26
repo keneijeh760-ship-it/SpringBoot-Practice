@@ -1,0 +1,122 @@
+Dec 26 14:38:04 ip-172-31-28-143 crond[1589]: (CRON) STARTUP (1.5.7)
+Dec 26 14:38:04 ip-172-31-28-143 crond[1589]: (CRON) INFO (Syslog will be used instead of sendmail.)
+Dec 26 14:38:04 ip-172-31-28-143 crond[1589]: (CRON) INFO (RANDOM_DELAY will be scaled with factor 67% if used.)
+Dec 26 14:38:04 ip-172-31-28-143 crond[1589]: (CRON) INFO (running with inotify support)
+Dec 26 14:50:01 ip-172-31-15-213 CROND[2717]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 14:50:01 ip-172-31-15-213 CROND[2716]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:01:01 ip-172-31-15-213 CROND[6286]: (root) CMD (run-parts /etc/cron.hourly)
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting 0anacron
+Dec 26 15:01:02 ip-172-31-15-213 anacron[6297]: Anacron started on 2025-12-26
+Dec 26 15:01:02 ip-172-31-15-213 anacron[6297]: Will run job `cron.daily' in 17 min.
+Dec 26 15:01:02 ip-172-31-15-213 anacron[6297]: Will run job `cron.weekly' in 37 min.
+Dec 26 15:01:02 ip-172-31-15-213 anacron[6297]: Will run job `cron.monthly' in 57 min.
+Dec 26 15:01:02 ip-172-31-15-213 anacron[6297]: Jobs will be executed sequentially
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished 0anacron
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 15:01:02 ip-172-31-15-213 run-parts[6286]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 15:01:02 ip-172-31-15-213 CROND[6285]: (root) CMDEND (run-parts /etc/cron.hourly)
+Dec 26 15:10:01 ip-172-31-15-213 CROND[17984]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:10:01 ip-172-31-15-213 CROND[17983]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:18:02 ip-172-31-15-213 anacron[6297]: Job `cron.daily' started
+Dec 26 15:18:02 ip-172-31-15-213 anacron[6297]: Job `cron.daily' terminated
+Dec 26 15:30:01 ip-172-31-15-213 CROND[43643]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:30:01 ip-172-31-15-213 CROND[43642]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:38:02 ip-172-31-15-213 anacron[6297]: Job `cron.weekly' started
+Dec 26 15:38:02 ip-172-31-15-213 anacron[6297]: Job `cron.weekly' terminated
+Dec 26 15:50:01 ip-172-31-15-213 CROND[69505]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:50:01 ip-172-31-15-213 CROND[69504]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 15:58:02 ip-172-31-15-213 anacron[6297]: Job `cron.monthly' started
+Dec 26 15:58:02 ip-172-31-15-213 anacron[6297]: Job `cron.monthly' terminated
+Dec 26 15:58:02 ip-172-31-15-213 anacron[6297]: Normal exit (3 jobs run)
+Dec 26 16:01:01 ip-172-31-15-213 CROND[83881]: (root) CMD (run-parts /etc/cron.hourly)
+Dec 26 16:01:01 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting 0anacron
+Dec 26 16:01:01 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished 0anacron
+Dec 26 16:01:01 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 16:01:01 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 16:01:01 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 16:01:02 ip-172-31-15-213 CROND[83880]: (root) CMDOUT (/etc/cron.hourly/cron.logrotate.elasticbeanstalk.applogs.conf:)
+Dec 26 16:01:02 ip-172-31-15-213 CROND[83880]: (root) CMDOUT ()
+Dec 26 16:01:02 ip-172-31-15-213 CROND[83880]: (root) CMDOUT (error: /etc/logrotate.elasticbeanstalk.hourly/logrotate.elasticbeanstalk.applogs.conf:12 error verifying olddir path /var/log/eb-docker/containers/eb-current-app/rotated: No such file or directory)
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 16:01:02 ip-172-31-15-213 run-parts[83881]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 16:01:02 ip-172-31-15-213 CROND[83880]: (root) CMDEND (run-parts /etc/cron.hourly)
+Dec 26 16:10:01 ip-172-31-15-213 CROND[95455]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 16:10:01 ip-172-31-15-213 CROND[95454]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 16:30:01 ip-172-31-15-213 CROND[121553]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 16:30:01 ip-172-31-15-213 CROND[121552]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 16:50:01 ip-172-31-15-213 CROND[147462]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 16:50:01 ip-172-31-15-213 CROND[147461]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 17:01:01 ip-172-31-15-213 CROND[161500]: (root) CMD (run-parts /etc/cron.hourly)
+Dec 26 17:01:01 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting 0anacron
+Dec 26 17:01:01 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished 0anacron
+Dec 26 17:01:01 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 17:01:01 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logcleanup.elasticbeanstalk.healthd-proxy.conf
+Dec 26 17:01:01 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 17:01:02 ip-172-31-15-213 CROND[161499]: (root) CMDOUT (/etc/cron.hourly/cron.logrotate.elasticbeanstalk.applogs.conf:)
+Dec 26 17:01:02 ip-172-31-15-213 CROND[161499]: (root) CMDOUT ()
+Dec 26 17:01:02 ip-172-31-15-213 CROND[161499]: (root) CMDOUT (error: /etc/logrotate.elasticbeanstalk.hourly/logrotate.elasticbeanstalk.applogs.conf:12 error verifying olddir path /var/log/eb-docker/containers/eb-current-app/rotated: No such file or directory)
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.applogs.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker-compose.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.docker.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.dockerdaemon.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-docker.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-engine.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.eb-hooks.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.healthd.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.nginx.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stderr.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) starting cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 17:01:02 ip-172-31-15-213 run-parts[161500]: (/etc/cron.hourly) finished cron.logrotate.elasticbeanstalk.web-stdout.conf
+Dec 26 17:01:02 ip-172-31-15-213 CROND[161499]: (root) CMDEND (run-parts /etc/cron.hourly)
+Dec 26 17:10:01 ip-172-31-15-213 CROND[173094]: (root) CMD (/opt/elasticbeanstalk/bin/publishlogs -type publish)
+Dec 26 17:10:01 ip-172-31-15-213 CROND[173093]: (root) CMDEND (/opt/elasticbeanstalk/bin/publishlogs -type publish)
