@@ -7,7 +7,7 @@ public class AccountRequestDTO {
 
     public AccountRequestDTO(){}
 
-    public String getAccountNumber(){
+    public long getAccountNumber(){
         return accountNumber;
     }
 

@@ -1,4 +1,6 @@
 package com.phope.hope.Entity;
 
-public class Role {
+public enum Role {
+    USER,
+    ADMIN
 }

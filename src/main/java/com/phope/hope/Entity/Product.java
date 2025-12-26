@@ -1,15 +1,21 @@
 package com.phope.hope.Entity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Product {
     @Id
     @GeneratedValue
     private long id;
     private String name;
     private double price;
+
+    public Product() {
+    }
 
 
     public Product(String name, double price){

@@ -56,3 +56,8 @@ build/
 *.jar
 *.war
 
+
+# Elastic Beanstalk Files
+src/.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

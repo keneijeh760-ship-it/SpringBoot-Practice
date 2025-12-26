@@ -1,4 +1,7 @@
 package com.phope.hope.Entity;
 
-public class Status {
+public enum Status {
+    SUCCESS,
+    FAILURE,
+    PENDING
 }

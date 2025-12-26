@@ -2,8 +2,8 @@ package com.phope.hope.Controller;
 
 import com.phope.hope.DTO.LoginRequestDTO;
 import com.phope.hope.DTO.LoginResponseDTO;
-import com.phope.hope.dto.*;
-import com.phope.hope.security.JwtService;
+
+import com.phope.hope.Security.JwtService;
 import org.springframework.security.authentication.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +28,7 @@ public class AuthController {
                         request.getEmail(), request.getPassword())
         );
 
-        String token = jwtService.generateToken(
-                request.getEmail(), "USER");
+        String token = jwtService.generateToken(request.getEmail());
 
         return new LoginResponseDTO(token);
     }

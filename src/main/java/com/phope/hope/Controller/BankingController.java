@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/transfers")
+
 public class BankingController {
 
 
@@ -25,15 +25,11 @@ public class BankingController {
         this.bankingService = bankingService;
 
     }
-    @PostMapping
-    public UserResponseDTO createUser(@RequestBody UserRequestDTO requestDTO) {
-        return bankingService.createUser(requestDTO);
-    }
 
 
 
 
-    @PostMapping
+    @PostMapping("/transfers")
     public String transferMoney(@RequestBody TransferRequest request) {
         bankingService.TransferMoney(
                 request.getFromAccountId(),

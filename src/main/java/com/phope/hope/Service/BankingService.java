@@ -4,26 +4,36 @@ import com.phope.hope.DTO.AccountResponseDTO;
 import com.phope.hope.DTO.UserRequestDTO;
 import com.phope.hope.DTO.UserResponseDTO;
 import com.phope.hope.Entity.Account;
+import com.phope.hope.Entity.Status;
+import com.phope.hope.Entity.Transaction;
 import com.phope.hope.Entity.User;
 import com.phope.hope.Repository.AccountRepository;
+import com.phope.hope.Repository.TransactionRepository;
 import com.phope.hope.Repository.UserRepository;
 import com.phope.hope.exception.AccountNotFoundException;
 import com.phope.hope.exception.InsufficinetFundsException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
 @Service
 public class BankingService {
+    private static final Logger logger = LoggerFactory.getLogger(BankingService.class);
 
 
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;
+    private final TransactionRepository transactionRepository;
 
-    public BankingService(AccountRepository accountRepository, UserRepository userRepository){
+    public BankingService(AccountRepository accountRepository, UserRepository userRepository, TransactionRepository transactionRepository) {
 
         this.accountRepository = accountRepository;
         this.userRepository = userRepository;
+        this.transactionRepository = transactionRepository;
     }
 
     public UserResponseDTO mapToUserResponse(User user) {
@@ -64,20 +74,39 @@ public class BankingService {
         return mapToUserResponse(savedUser);
     }
 
+    @Transactional
+    public void TransferMoney(Long fromAccountId, Long toAccountId, double amount) {
+        // Find accounts
+        Account fromAccount = accountRepository.findById(fromAccountId)
+                .orElseThrow(() -> new AccountNotFoundException("Account not found: " + fromAccountId));
 
-    public void TransferMoney(long fromId, long toId, double amount){
-        Account from  = accountRepository.findById(fromId).orElseThrow(() -> new AccountNotFoundException(fromId));
-        Account to = accountRepository.findById(toId).orElseThrow(() -> new AccountNotFoundException(toId));
+        Account toAccount = accountRepository.findById(toAccountId)
+                .orElseThrow(() -> new AccountNotFoundException("Account not found: " + toAccountId));
 
-        if (from.getBalance() < amount){
-            throw new InsufficinetFundsException();
+        // CHECK FUNDS FIRST - throw exception immediately if insufficient
+        if (fromAccount.getBalance() < amount) {
+            logger.warn("Transfer failed: insufficient funds in account {}", fromAccountId);
+            throw new InsufficinetFundsException("Insufficient funds in account: " + fromAccountId);
+            // DON'T SAVE TRANSACTION - just throw exception and exit
         }
 
-        from.setBalance(from.getBalance() - amount);
-        to.setBalance(from.getBalance() + amount);
+        // Only reach here if funds are sufficient
+        fromAccount.setBalance(fromAccount.getBalance() - amount);
+        toAccount.setBalance(toAccount.getBalance() + amount);
 
-        accountRepository.save(from);
-        accountRepository.save(to);
+        accountRepository.save(fromAccount);
+        accountRepository.save(toAccount);
 
+        // Save transaction ONLY for successful transfers
+        Transaction transaction = new Transaction();
+        transaction.setFrom(fromAccount);
+        transaction.setTo(toAccount);
+        transaction.setAmount(amount);
+        transaction.setStatus(Status.SUCCESS);
+        transaction.setTimestamp(LocalDateTime.now());
+
+        transactionRepository.save(transaction);
+
+        logger.info("Transfer successful: {} -> {} amount {}", fromAccountId, toAccountId, amount);
     }
 }
