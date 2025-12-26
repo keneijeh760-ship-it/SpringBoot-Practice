@@ -1,11 +1,9 @@
-# Use Java 17 runtime
 FROM eclipse-temurin:17-jdk-alpine
 
-# Copy the actual JAR into the container
-COPY target/hope-0.0.1-SNAPSHOT.jar app.jar
+WORKDIR /app
 
-# Set the entrypoint to run the JAR
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/*.jar app.jar
 
-# Expose port 8080 (change to 80 if EB health check requires)
-EXPOSE 80
+EXPOSE 5000
+
+ENTRYPOINT ["java", "-jar", "-Dserver.port=5000", "app.jar"]
