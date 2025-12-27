@@ -1,0 +1,7 @@
+.git
+src/
+node_modules/
+*.iml
+*.log
+.DS_Store
+target/*.jar.original
