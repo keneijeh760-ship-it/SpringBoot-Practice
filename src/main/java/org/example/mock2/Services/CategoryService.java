@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class CategoryService {
-    private CategoryRepository categoryRepository;
-    private UserRepository userRepository;
+    private final CategoryRepository categoryRepository;
+    private final UserRepository userRepository;
 
     public CategoryResponseDTO createCategory(CategoryRequestDTO categoryRequestDTO, String useremail) {
 
@@ -22,7 +22,6 @@ public class CategoryService {
         .orElseThrow(() -> new ApiRequestExceptions("User not found"));
 
         Category category = Category.builder()
-                .id(categoryRequestDTO.getId())
                 .name(categoryRequestDTO.getCategoryName())
                 .description(categoryRequestDTO.getDescription())
                 .user(user)

@@ -1,12 +1,11 @@
 package org.example.mock2.DTO;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class CategoryRequestDTO {
     private Long Id;
     private String categoryName;

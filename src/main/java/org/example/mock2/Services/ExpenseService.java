@@ -29,7 +29,6 @@ public class ExpenseService {
                 .orElseThrow(() -> new ApiRequestExceptions("Category not found"));
 
         Expense expense = Expense.builder()
-                .id(category.getId())
                 .amount(expenseRequestDTO.getAmount())
                 .title(expenseRequestDTO.getTitle())
                 .category(category)
@@ -54,17 +53,18 @@ public class ExpenseService {
         Expense expenseupdate = expsenseRepository.findExpenseByTitle(title)
                 .orElseThrow(() -> new ApiRequestExceptions("Expense not found"));
 
-        if (expenseupdate.getAmount().equals(amount)) {
-            throw new ApiRequestExceptions("Expense amount didnt change");
-        }else{
-            expenseupdate.setAmount(amount);
-        }
 
-        if (expenseupdate.getTitle().equals(title)) {
+
+
+
+        if (expenseupdate.getTitle().equals(title) && expenseupdate.getAmount().equals(amount)) {
             throw new ApiRequestExceptions("Expense title didnt change");
         }else{
             expenseupdate.setTitle(title);
+            expenseupdate.setAmount(amount);
         }
+
+        expsenseRepository.save(expenseupdate);
 
         return ExpenseResponseDTO.builder()
                 .title(expenseupdate.getTitle())
