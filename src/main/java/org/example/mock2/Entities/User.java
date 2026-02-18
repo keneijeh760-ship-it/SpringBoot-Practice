@@ -16,6 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class User implements UserDetails {
 
     @Id
@@ -35,6 +36,9 @@ public class User implements UserDetails {
     private String password;
     private String firstName;
     private String lastName;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Category> categories;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
