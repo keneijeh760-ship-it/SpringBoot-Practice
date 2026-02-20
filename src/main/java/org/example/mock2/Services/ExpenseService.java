@@ -20,9 +20,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExpenseService {
 
-    private  final UserRepository  userRepository;
-    private final ExpsenseRepository expsenseRepository;
+    private final ExpsenseRepository  expsenseRepository;
     private final CategoryRepository categoryRepository;
+    private final UserRepository userRepository;
 
     public ExpenseResponseDTO createExpense(ExpenseRequestDTO expenseRequestDTO) {
         Category category = categoryRepository.findById(expenseRequestDTO.getCategoryId())
@@ -53,10 +53,6 @@ public class ExpenseService {
         Expense expenseupdate = expsenseRepository.findExpenseByTitle(title)
                 .orElseThrow(() -> new ApiRequestExceptions("Expense not found"));
 
-
-
-
-
         if (expenseupdate.getTitle().equals(title) && expenseupdate.getAmount().equals(amount)) {
             throw new ApiRequestExceptions("Expense title didnt change");
         }else{
@@ -71,10 +67,6 @@ public class ExpenseService {
                 .amount(expenseupdate.getAmount())
                 .date(LocalDateTime.now())
                 .build();
-
-
-
-
 
     }
 
